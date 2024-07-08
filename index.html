@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+    <link rel="stylesheet" type="text/css" href="./src/assets/css/common.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/main.js"></script>
+    <script>
+      
+      (function(){
+        // 從 sessionStorage 中獲取重定向前的 URL
+        let redirect = sessionStorage.redirect;
+        // 删除 sessionStorage 中的重定向信息
+        delete sessionStorage.redirect;
+        // 如果存在重定向 URL 且與當前 URL 不同，使用 history.replaceState 更新url
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  </body>
+</html>

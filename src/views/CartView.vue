@@ -39,9 +39,13 @@ export default {
     methods: {
         async getCart(){
             try{
-                const response = await apiCart();               
+                const response = await apiCart();  
+                
+                console.log(response.data);  //測試!!!!
 
                 this.carts = response.data[0].items;
+
+                console.log(response.data[0].items);  //測試!!!!
                 
             }catch(error){
                 console.error(error);

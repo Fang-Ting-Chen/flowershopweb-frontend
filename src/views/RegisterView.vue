@@ -58,7 +58,7 @@ export default{
             const response = await apiusers(requestData); 
 
             if( response.status === 200 ){
-                window.location.href = 'http://localhost:5175/loginview';
+                window.location.href = 'https://fang-ting-chen.github.io/flowershopweb-frontend/loginview';
             } else {
                 window.alert('帳號或密碼已被註冊過');
             }
